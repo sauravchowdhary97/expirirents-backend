@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost:27017/expirirents", { useNewUrlParser: true },(error)=>{
+mongoose.connect("mongodb://localhost:27017/expirirents", { useNewUrlParser: true, useUnifiedTopology : true }, (error)=>{
   if(!error)
     console.log("Success! Connected to database!");
   else
@@ -9,3 +9,4 @@ mongoose.connect("mongodb://localhost:27017/expirirents", { useNewUrlParser: tru
 
 const Login = require("./login.model")
 const Profile = require("./profile.model")
+const Listing = require("./listing.model")

@@ -56,5 +56,20 @@ router.get("/profile", (req, res)=>{
     
 });
 
+const ListingModel = mongoose.model("listing");
+
+router.get("/listing", (req, res)=>{
+
+    ListingModel.find((err, docs)=>{
+        if(!err){
+            console.log("Listing:")
+            res.send("Listing Controller!")
+        } else{
+            res.send("Error occurred!");
+        }
+
+    })
+})
+
 module.exports = router;
 
